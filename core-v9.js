@@ -145,17 +145,7 @@
 
   /* Zubi Recommended — hover/click a mini card to change the preview;
      auto-cycles until the visitor interacts. */
-  var ZREC=[
-    {href:'j-ladakh-by-road.html',img:'j-ladakh.webp',meta:'Ladakh · Moderate · 9 nights',title:'Ladakh by Road',
-     desc:'Nine days over the high passes to Nubra and Pangong, at a pace that lets everyone sleep well at altitude: oxygen in every vehicle, doctors’ numbers in every driver’s phone.',
-     from:'From ₹69,999 per person'},
-    {href:'j-kashmir-tulip-season.html',img:'j-kashmir.webp',meta:'Kashmir · Gentle · 6 nights',title:'Kashmir in Tulip Season',
-     desc:'Six nights across Srinagar, Gulmarg and Pahalgam in the fortnight the tulips are actually out, with a houseboat night your children will talk about for years.',
-     from:'Price pending'},
-    {href:'j-kerala-backwaters-slowly.html',img:'j-kerala.webp',meta:'Kerala · Gentle · 7 nights',title:'Kerala Backwaters, Slowly',
-     desc:'Seven unhurried nights from Kochi through Alleppey to Kumarakom and the hills: a houseboat, a spice garden, and afternoons with nothing in them, on purpose.',
-     from:'From ₹57,999 per person'}
-  ];
+  var ZREC=[];
   var minis=Array.prototype.slice.call(document.querySelectorAll('.zmini'));
   if(minis.length){
     var zsel=0, zuser=false;
@@ -205,16 +195,19 @@
      journeys (outbound list is with Sachin), so only India renders. */
   var REGIONS={'India':{map:'india.svg',viewBox:'0 0 612 696'}};
   var PINS=[
-    {st:'jk',dx:26,dy:-6, r:'Ladakh',   href:'j-ladakh-by-road.html',        img:'j-ladakh.webp',   meta:'Ladakh · 9 nights · Moderate',   title:'Ladakh by Road',              desc:'Nine days over the high passes to Nubra and Pangong.'},
-    {st:'jk',dx:-24,dy:6, r:'Kashmir',  href:'j-kashmir-tulip-season.html',  img:'j-kashmir.webp',  meta:'Kashmir · 6 nights · Gentle',    title:'Kashmir in Tulip Season',     desc:'Srinagar, Gulmarg and Pahalgam when the tulips are out.'},
-    {st:'hp',dx:8,dy:-4,  r:'Spiti',    href:'j-spiti-middle-land.html',     img:'j-spiti.webp',    meta:'Spiti · 8 nights · Demanding',   title:'Spiti: The Middle Land',      desc:'The high desert between Shimla and Manali.'},
-    {st:'rj',dx:0,dy:0,   r:'Rajasthan',href:'j-rajasthan-first-timers.html',img:'j-rajasthan.webp',meta:'Rajasthan · 8 nights · Moderate',title:'Rajasthan for First-Timers',  desc:'Jaipur, Jodhpur, Jaisalmer and Udaipur, in the right order.'},
-    {st:'gj',dx:-10,dy:6, r:'Gujarat',  href:'j-dwarka-somnath-road.html',   img:'j-dwarka.webp',   meta:'Gujarat · 5 nights · Gentle',    title:'Dwarka & Somnath by Road',    desc:'The Saurashtra coast, temple to temple.'},
-    {st:'up',dx:30,dy:12, r:'Varanasi', href:'j-varanasi-ganga.html',        img:'j-varanasi.webp', meta:'Varanasi · 4 nights · Gentle',   title:'Varanasi & the Ganga',        desc:'The oldest living city, at dawn and at aarti.'},
-    {st:'sk',dx:0,dy:-2,  r:'Sikkim',   href:'j-sikkim-darjeeling-bloom.html',img:'j-sikkim.webp',  meta:'Sikkim · 7 nights · Gentle',     title:'Sikkim & Darjeeling in Bloom',desc:'Toy train to rhododendron valleys, in April.'},
-    {st:'as',dx:6,dy:0,   r:'Assam',    href:'j-assam-tea-majuli.html',      img:'j-assam.webp',    meta:'Assam · 6 nights · Gentle',      title:'Assam: Tea, River, Island',   desc:'Tea country, the Brahmaputra, and Majuli.'},
-    {st:'kl',dx:0,dy:0,   r:'Kerala',   href:'j-kerala-backwaters-slowly.html',img:'j-kerala.webp', meta:'Kerala · 7 nights · Gentle',     title:'Kerala Backwaters, Slowly',   desc:'Kochi through Alleppey to Kumarakom and the hills.'},
-    {st:'an',dx:-4,dy:-20,r:'Andaman',  href:'j-andaman-unhurried.html',     img:'j-andaman.webp',  meta:'Andaman · 6 nights · Gentle',    title:'Andaman, Unhurried',          desc:'The only window we will sell it in.'}
+    {st:'jk',dx:26,dy:-6, r:'Ladakh',    href:'p-hiking-trekking.html',        img:'j-ladakh.webp',   meta:'Ladakh \u00b7 Hiking & trekking',        title:'High passes, on a graded route',      desc:'Acclimatisation days written into the plan, not removed to recover a delay.'},
+    {st:'hp',dx:8,dy:-4,  r:'Spiti',     href:'p-camping.html',                img:'j-spiti.webp',    meta:'Spiti \u00b7 Camping',                   title:'A residential camp at altitude',      desc:'The night protocol matters more than the activity list.'},
+    {st:'rj',dx:0,dy:0,   r:'Rajasthan', href:'p-domestic-tours.html',         img:'j-rajasthan.webp',meta:'Rajasthan \u00b7 Domestic tours',        title:'Forts, desert and a full coach day',  desc:'One coordinator holds the plan, the counts and the contingencies.'},
+    {st:'gj',dx:-2,dy:2,  r:'Kutch',     href:'p-cas-learning.html',           img:'j-rann-of-kutch-rann-utsav.webp', meta:'Kutch \u00b7 CAS learning',  title:'Service with a real brief',           desc:'Hours that stand up to a coordinator, and evidence at the end.'},
+    {st:'up',dx:30,dy:12, r:'Varanasi',  href:'p-project-study-tours.html',    img:'j-varanasi.webp', meta:'Varanasi \u00b7 Project study tours',    title:'A question set before departure',     desc:'Every visit and interview has to earn its place on the plan.'},
+    {st:'mp',dx:0,dy:4,   r:'Bandhavgarh',href:'p-wildlife-conservation.html', img:'j-bandhavgarh-kanha-tiger-safari.webp', meta:'Bandhavgarh \u00b7 Wildlife & conservation', title:'Census method, in a working reserve', desc:'Naturalist-led days with the buffer villages and the conflict included.'},
+    {st:'ka',dx:-6,dy:-8, r:'Hampi',     href:'p-project-study-tours.html',    img:'j-hampi-badami-stone-empire.webp', meta:'Hampi \u00b7 Project study tours', title:'Drawing from the building',        desc:'On site, from the stone rather than from a photograph of it.'},
+    {st:'ml',dx:4,dy:6,   r:'Meghalaya', href:'p-environmental-studies.html',  img:'r-rootbridge.webp', meta:'Meghalaya \u00b7 Environmental studies', title:'Water, soil and canopy, measured',  desc:'Living root bridges, and a method the group applies on site.'},
+    {st:'as',dx:10,dy:-4, r:'Assam',     href:'p-sustainable-habitat.html',    img:'j-assam.webp',    meta:'Assam \u00b7 Sustainable habitat',       title:'Where the food comes from',           desc:'Tea gardens and river country, compared on the same criteria.'},
+    {st:'kl',dx:0,dy:0,   r:'Kerala',    href:'p-environmental-studies.html',  img:'j-kerala.webp',   meta:'Kerala \u00b7 Environmental studies',    title:'Backwaters as a system',              desc:'Water quality and land use, recorded rather than described.'},
+    {st:'sk',dx:0,dy:-2,  r:'Sikkim',    href:'p-hiking-trekking.html',        img:'j-sikkim.webp',   meta:'Sikkim \u00b7 Hiking & trekking',        title:'Graded to the slowest walker',        desc:'An evacuation route and the nearest facility, written for every night.'},
+    {st:'mh',dx:-4,dy:2,  r:'Mumbai',    href:'p-industrial-visits.html',      img:'d-factory-visit.webp', meta:'Mumbai \u00b7 Industrial visits',   title:'Access, and the right shift',         desc:'Written confirmation, the safety induction booked, someone senior to ask.'},
+    {st:'an',dx:-4,dy:-20,r:'Andaman',   href:'p-domestic-tours.html',         img:'j-andaman.webp',  meta:'Andaman \u00b7 Domestic tours',          title:'Coast, reef and a long way from home', desc:'A costed plan with the logistics visible before the school commits.'}
   ];
   PINS.forEach(function(p){p.region=p.region||'India';});
   var pinsG=document.getElementById('mappins'), statesG=document.getElementById('mapstates');
@@ -284,11 +277,7 @@
     });
     /* Outbound tabs — journeys are live; tabs go straight to the journey
        until per-country map files land */
-    [{n:'Dubai',h:'j-dubai-abu-dhabi-tour.html'},
-     {n:'Vietnam',h:'j-vietnam-tour-north-to-south.html'},
-     {n:'Japan',h:'j-japan-cherry-blossom-tour.html'},
-     {n:'Bali',h:'j-bali-tour-beyond-pool-villa.html'},
-     {n:'Beyond India',h:'journeys.html'}].forEach(function(o){
+    [].forEach(function(o){
       var b=document.createElement('button');
       b.textContent=o.n; b.setAttribute('role','link');
       b.addEventListener('click',function(){window.location.href=o.h;});
@@ -381,11 +370,11 @@
       menu.setAttribute('role','dialog');
       menu.setAttribute('aria-modal','true');
       menu.setAttribute('aria-label','Menu');
-      var brand=document.querySelector('.brand .wm');
+      var brand=document.querySelector('.brand .lg-col')||document.querySelector('.brand .wm');
       var tel=document.querySelector('.navtel');
       var cta=document.querySelector('.nav .btn');
       var top=document.createElement('div'); top.className='nmtop';
-      top.innerHTML=(brand?brand.outerHTML:'<span class="wm">Destinationz 360</span>')+
+      top.innerHTML=(brand?brand.outerHTML:'<img class="wmk lg-col" src="logo-nav.png" alt="Destinationz 360">')+
                     '<button class="nmclose" type="button" aria-label="Close menu">&times;</button>';
       var body=document.createElement('div'); body.className='nmbody'; var ban=null;
       links.querySelectorAll('.mhead,a').forEach(function(el){
@@ -569,7 +558,7 @@
 })();
 
 /* ── Zubi Recommended ⇒ ⚡ Trending badge, automatic wherever journey cards render (r10) ── */
-window.ZREC=['j-rajasthan-first-timers.html','j-golden-triangle-delhi-agra-jaipur.html','j-kerala-backwaters-slowly.html','j-ladakh-by-road.html','j-ayodhya-prayagraj-chitrakoot-ram-path.html','j-dubai-abu-dhabi-tour.html','j-vietnam-tour-north-to-south.html'];
+window.ZREC=[];
 (function(){
   function zap(){
     [].slice.call(document.querySelectorAll('.jcard')).forEach(function(c){
