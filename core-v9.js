@@ -392,7 +392,7 @@
       var foot=document.createElement('div'); foot.className='nmfoot';
       if(cta){var c2=cta.cloneNode(true); foot.appendChild(c2);}
       if(tel){var t2=document.createElement('a'); t2.className='nmtel';
-        t2.href=tel.getAttribute('href'); t2.textContent='Call '+tel.textContent.trim();
+        t2.href=tel.getAttribute('href'); var tf=tel.querySelector('.telfull'); t2.textContent='Call '+(tf?tf:tel).textContent.trim();
         foot.appendChild(t2);}
       menu.appendChild(top); menu.appendChild(body); menu.appendChild(foot);
       document.body.appendChild(menu);
@@ -528,7 +528,7 @@
    an entrance/reveal tween gets forced visible after the page has been
    visible for 3 seconds. Animations are an enhancement, never a dependency. */
 (function(){
-  var SELS='.hero h1,.hero .sub,.hero .eyebrow,.hero .trust,.hero .btnrow,main h2,main .lead,main .pcard,main .card,.mstat,.zrec,.jgrid,.daylist li,.intent';
+  var SELS='.hero h1,.hero .sub,.hero .eyebrow,.hero .trust,.hero .btnrow,main h2,main .lead,main .pcard,main .card,.mstat,.zrec,.jgrid,.daylist li,.intent,.steps .step,.award,.howcard,.zmini,.tstory,.mapgrid';
   function rescue(){
   try{
     document.querySelectorAll(SELS).forEach(function(el){

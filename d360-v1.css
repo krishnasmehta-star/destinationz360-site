@@ -498,3 +498,8 @@
       .zfan .zcard .zc-title,.zfan .zcard:not(.zc-centre) .zc-title{font-size:19px}
       .zfan .zcard .zc-from,.zfan .zcard:not(.zc-centre) .zc-from{font-size:14.5px}
     }
+
+/* 26 Sep QA: D360 has four steps where Zubilant has three; a 3-col grid
+   orphaned step 04 on its own row at desktop. Four across, two at tablet. */
+@media (min-width:1101px){ .steps{grid-template-columns:repeat(4,1fr)} }
+@media (min-width:701px) and (max-width:1100px){ .steps{grid-template-columns:repeat(2,1fr)} }
