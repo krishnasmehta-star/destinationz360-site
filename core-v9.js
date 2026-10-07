@@ -744,9 +744,14 @@ window.ZREC=[];
    ever lost. Once active the happy path is one click, no interstitial: the
    "Ready to send" panel is failure-only now (Krishna, 24 Aug PM).
    Stage 2 post-cutover: Cloudflare Worker + Resend at /api/enquiry; swap EP
-   back, nothing else changes (board 2.1 #6, doc 39 §2). */
+   back, nothing else changes (board 2.1 #6, doc 39 §2).
+   7 Oct: the site's mailto links and the TO fallback moved to
+   edutours@destinationz360.in now that the mailbox receives again. EP is
+   DELIBERATELY still experience@zubilant.co.in: FormSubmit will not deliver
+   to a new address until somebody clicks its activation link in that inbox,
+   so the endpoint moves only after the address is activated. Board 4.1 #7b. */
 (function(){
-  var EP='https://formsubmit.co/ajax/experience@zubilant.co.in', WA='918108117770', TO='experience@zubilant.co.in';
+  var EP='https://formsubmit.co/ajax/experience@zubilant.co.in', WA='918108117770', TO='edutours@destinationz360.in';
   /* r5 validation (reinstated; stage-1 was built from a pre-r4 clone and dropped it) */
   function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(v); }
   function validPhone(v){
